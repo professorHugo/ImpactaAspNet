@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32328.378
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNet.Capitulo02.Razor.Net", "AspNet.Capitulo02.Razor.Net\AspNet.Capitulo02.Razor.Net.csproj", "{23F4CBD6-CFF6-49F0-B4A6-2797F404A4B9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Marketplace.Repositorios.SqlServer.DbFirst", "Marketplace.Repositorios.SqlServer.DbFirst\Marketplace.Repositorios.SqlServer.DbFirst.csproj", "{3C1255F5-5400-424D-8C3F-BA0DFB583E70}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Marketplace", "Marketplace", "{654B7926-ECEE-4621-A11F-416E2C839772}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Marketplace.Mvc", "Marketplace.Mvc\Marketplace.Mvc.csproj", "{22CD48DB-28E8-41E1-920B-886BF308A8ED}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{23F4CBD6-CFF6-49F0-B4A6-2797F404A4B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23F4CBD6-CFF6-49F0-B4A6-2797F404A4B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23F4CBD6-CFF6-49F0-B4A6-2797F404A4B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23F4CBD6-CFF6-49F0-B4A6-2797F404A4B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C1255F5-5400-424D-8C3F-BA0DFB583E70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C1255F5-5400-424D-8C3F-BA0DFB583E70}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C1255F5-5400-424D-8C3F-BA0DFB583E70}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C1255F5-5400-424D-8C3F-BA0DFB583E70}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22CD48DB-28E8-41E1-920B-886BF308A8ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22CD48DB-28E8-41E1-920B-886BF308A8ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22CD48DB-28E8-41E1-920B-886BF308A8ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22CD48DB-28E8-41E1-920B-886BF308A8ED}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3C1255F5-5400-424D-8C3F-BA0DFB583E70} = {654B7926-ECEE-4621-A11F-416E2C839772}
+		{22CD48DB-28E8-41E1-920B-886BF308A8ED} = {654B7926-ECEE-4621-A11F-416E2C839772}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3D829F1D-B52E-48FA-B9D5-AE44F0B2CF55}
+	EndGlobalSection
+EndGlobal

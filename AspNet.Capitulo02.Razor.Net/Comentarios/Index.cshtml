@@ -1,0 +1,81 @@
+﻿@using AspNet.Capitulo02.Razor.Net.Comentarios
+@{ 
+    var aplicacao = new ComentarioAplicacao();
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width" />
+	<title>Comentários</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<script src="https://kit.fontawesome.com/b16f5ef87e.js" crossorigin="anonymous"></script>
+	
+</head>
+<body>
+	@{ 
+        if (IsPost)
+        {
+            aplicacao.Inserir(Request["Nome"], Request["Comentario"]); 
+        }
+	}
+	<h1 class="col-12">Comentários</h1>
+	<hr />
+    <div class="row">
+        <div class="col-5 float-left">
+            <form method="post" class="inline-form">
+                <h4 class="col-12">Novo Comentário </h4>
+                <div class="col-12 form-group">
+                    <div class="col-2 float-left" style="padding:0">
+                        <label class="col-form-label col-form-label-lg" for="Nome" style="padding:0">Nome: </label>
+                    </div>
+                    <div class="col-10 float-left" style="padding:0">
+                        <input class="form-control" type="text" name="Nome" id="Nome" placeholder="Digite seu nome"> <br />
+                    </div>
+
+                    <label class="col-form-label col-form-label-lg" for="Comentario" style="padding:0">Comentário: </label>
+                    <textarea class="form-control"
+                              name="Comentario"
+                              id="Comentario"
+                              placeholder="Digite seu comentário"
+                              rows="5"></textarea>
+                    <br />
+                </div>
+                <div class="col-12 form-group">
+                    <button class="btn btn-success" type="submit">
+                        <i class="fas fa-floppy-disk"></i> Gravar
+                    </button>
+                    <button class="btn btn-danger">
+                        <i class="fas fa-ban"></i> Cancelar
+                    </button>
+                </div>
+            </form>
+
+        </div>
+
+        <div class="col-7 float-left" id="Todos-Comentarios">
+            <h4>Todos os comentários</h4>
+            <table class="table table-bordered table-hover">
+                <thead>
+                <th>Data</th>
+                <th>Nome</th>
+                <th>Comentario</th>
+                </thead>
+                <tbody>
+                    @foreach (var comentario in aplicacao.Selecionar())
+                    {
+                        <tr>
+                            <td>@comentario.Data</td>
+                            <td>@comentario.Nome</td>
+                            <td>@comentario.Comentario</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
