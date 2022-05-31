@@ -15,13 +15,38 @@ namespace Marketplace.Mvc.Controllers
         // GET: Clientes
         public ActionResult Index()
         {
-            return View();
+            return View(Mapear(repositorio.Selecionar()));
+        }
+
+        private List<ClienteViewModel> Mapear(List<Cliente> clientes)
+        {
+            var viewModel = new List<ClienteViewModel>();
+
+            foreach (var cliente in clientes)
+            {
+                viewModel.Add(Mapear(cliente));
+            }
+
+            return viewModel;
+        }
+
+        private ClienteViewModel Mapear(Cliente cliente)
+        {
+            var viewModel = new ClienteViewModel();
+
+            viewModel.Id = cliente.Id;
+            viewModel.Nome = cliente.Nome;
+            viewModel.Documento = cliente.Documento;
+            viewModel.Telefone = cliente.Telefone;
+            viewModel.Email = cliente.Email;
+
+            return viewModel;
         }
 
         // GET: Clientes/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            return View(Mapear(repositorio.Selecionar(id)));
         }
 
         // GET: Clientes/Create
@@ -32,6 +57,7 @@ namespace Marketplace.Mvc.Controllers
 
         // POST: Clientes/Create
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Create(ClienteViewModel viewModel)
         {
             try
@@ -39,7 +65,7 @@ namespace Marketplace.Mvc.Controllers
                 //Verificar se o modelo de dados está válido
                 if (!ModelState.IsValid)
                 {
-                    return View();
+                    return View(viewModel);
                 }
 
                 repositorio.Inserir(Mapear(viewModel));
@@ -69,44 +95,60 @@ namespace Marketplace.Mvc.Controllers
         // GET: Clientes/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            return View(Mapear(repositorio.Selecionar(id)));
         }
 
         // POST: Clientes/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(int id, ClienteViewModel viewModel)
         {
             try
             {
-                // TODO: Add update logic here
+                if (id != viewModel.Id)
+                {
+                    ModelState.AddModelError("", "O Id do cliente especificado na URL não é o mesmo da requisuição enviada ao servidor");
+                }
+
+                if (!ModelState.IsValid)
+                {
+                    return View(viewModel);
+                }
+
+                //collection["Documento"];similar ao $_POST
+
+                repositorio.Atualizar(Mapear(viewModel));
 
                 return RedirectToAction("Index");
             }
             catch
             {
-                return View();
+                //Logar o erro
+                return View("Error");
             }
         }
 
         // GET: Clientes/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            return View(Mapear(repositorio.Selecionar(id)));
         }
 
         // POST: Clientes/Delete/5
         [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        [ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirmation(int id)
         {
             try
             {
-                // TODO: Add delete logic here
-
+                repositorio.Excluir(id);
                 return RedirectToAction("Index");
             }
             catch
             {
-                return View();
+                //Fazer o Log
+                return View("Error");
             }
         }
     }

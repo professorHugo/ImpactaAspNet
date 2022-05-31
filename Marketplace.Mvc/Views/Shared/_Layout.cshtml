@@ -22,13 +22,14 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Sobre", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contato", "Contact", "Home")</li>
+                    @*<li>@Html.ActionLink("Sobre", "About", "Home")</li>*@
+                    @*<li>@Html.ActionLink("Contato", "Contact", "Home")</li>*@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">
                             Clientes <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Ver Clientes", "Index", "Clientes")</li>
                             <li>@Html.ActionLink("Cadastrar Clientes", "Create", "Clientes")</li>
                         </ul>
                         
@@ -42,7 +43,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - Meu Aplicativo ASP.NET</p>
+            <p>&copy; @DateTime.Now.Year - Marketplace</p>
         </footer>
     </div>
 

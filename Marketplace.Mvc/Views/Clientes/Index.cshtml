@@ -1,0 +1,61 @@
+﻿@model IEnumerable<Marketplace.Mvc.Models.ClienteViewModel>
+
+@{
+    ViewBag.Title = "Clientes";
+}
+<style>
+    .btn.btn-info>a{
+        text-decoration: none;
+        color: #fff;
+    }
+
+    .btn.btn-info:hover a {
+        text-decoration: underline;
+    }
+</style>
+
+<h2>Clientes</h2>
+
+<p class="btn btn-info">
+    @Html.ActionLink("Cadastrar novo", "Create")
+</p>
+<table class="table table-bordered table-striped table-hover">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Documento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Telefone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Documento)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Telefone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Detailhes", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Excluir", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>
