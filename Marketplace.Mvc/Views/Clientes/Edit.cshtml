@@ -10,7 +10,7 @@
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>ClienteViewModel</h4>
         <hr />
@@ -62,5 +62,9 @@
 </div>
 
 @section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/jqueryval");
+    <script type="text/javascript">
+        $("#Documento").inputmask("9{3}.9{3}.9{3}-9{2}");
+        $("#Telefone").inputmask("(9{2}) 9{1} 9{4} - 9{4}");
+    </script>
 }

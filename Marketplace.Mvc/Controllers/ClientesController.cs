@@ -3,6 +3,7 @@ using Marketplace.Repositorios.SqlServer.DbFirst;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.Mvc;
 
@@ -36,7 +37,7 @@ namespace Marketplace.Mvc.Controllers
 
             viewModel.Id = cliente.Id;
             viewModel.Nome = cliente.Nome;
-            viewModel.Documento = cliente.Documento;
+            viewModel.Documento = Convert.ToUInt64( new Regex("[^\\d]").Replace(cliente.Documento,"")).ToString(@"000\.000\.000-00");
             viewModel.Telefone = cliente.Telefone;
             viewModel.Email = cliente.Email;
 
@@ -86,7 +87,7 @@ namespace Marketplace.Mvc.Controllers
             cliente.Id = viewModel.Id;
             cliente.Nome = viewModel.Nome;
             cliente.Email = viewModel.Email;
-            cliente.Documento = viewModel.Documento;
+            cliente.Documento = viewModel.Documento.Replace(".", "").Replace("-", string.Empty);
             cliente.Telefone = viewModel.Telefone;
 
             return cliente;
