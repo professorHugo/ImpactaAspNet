@@ -11,6 +11,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Marketplace", "Marketplace"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Marketplace.Mvc", "Marketplace.Mvc\Marketplace.Mvc.csproj", "{22CD48DB-28E8-41E1-920B-886BF308A8ED}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GatewayPagamento", "GatewayPagamento", "{44BCD21E-184A-4E44-89FB-61215F366966}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GatewayPagamento.Dominio", "GatewayPagamento.Dominio\GatewayPagamento.Dominio.csproj", "{B352FC5A-734C-442B-999E-5414B2D5157C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GatewayPagamento.Repositorios.SqlServer.CodeFirst", "GatewayPagamento.Repositorios.SqlServer.CodeFirst\GatewayPagamento.Repositorios.SqlServer.CodeFirst.csproj", "{0151011E-B99D-429B-9F8E-66407549FA19}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GatewayPagamento.Repositorios.SqlServer.CodeFirstTests", "GatewayPagamento.Repositorios.SqlServer.CodeFirstTests\GatewayPagamento.Repositorios.SqlServer.CodeFirstTests.csproj", "{D2C21AEC-09F1-4ACF-A9D2-ABC284FBC004}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +37,18 @@ Global
 		{22CD48DB-28E8-41E1-920B-886BF308A8ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{22CD48DB-28E8-41E1-920B-886BF308A8ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{22CD48DB-28E8-41E1-920B-886BF308A8ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B352FC5A-734C-442B-999E-5414B2D5157C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B352FC5A-734C-442B-999E-5414B2D5157C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B352FC5A-734C-442B-999E-5414B2D5157C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B352FC5A-734C-442B-999E-5414B2D5157C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0151011E-B99D-429B-9F8E-66407549FA19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0151011E-B99D-429B-9F8E-66407549FA19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0151011E-B99D-429B-9F8E-66407549FA19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0151011E-B99D-429B-9F8E-66407549FA19}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2C21AEC-09F1-4ACF-A9D2-ABC284FBC004}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2C21AEC-09F1-4ACF-A9D2-ABC284FBC004}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2C21AEC-09F1-4ACF-A9D2-ABC284FBC004}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2C21AEC-09F1-4ACF-A9D2-ABC284FBC004}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -36,6 +56,9 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{3C1255F5-5400-424D-8C3F-BA0DFB583E70} = {654B7926-ECEE-4621-A11F-416E2C839772}
 		{22CD48DB-28E8-41E1-920B-886BF308A8ED} = {654B7926-ECEE-4621-A11F-416E2C839772}
+		{B352FC5A-734C-442B-999E-5414B2D5157C} = {44BCD21E-184A-4E44-89FB-61215F366966}
+		{0151011E-B99D-429B-9F8E-66407549FA19} = {44BCD21E-184A-4E44-89FB-61215F366966}
+		{D2C21AEC-09F1-4ACF-A9D2-ABC284FBC004} = {44BCD21E-184A-4E44-89FB-61215F366966}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3D829F1D-B52E-48FA-B9D5-AE44F0B2CF55}
