@@ -47,9 +47,8 @@
     <Compile Include="Interfaces\ICartaoRepositorio.cs" />
     <Compile Include="Interfaces\IPagamentoRepositorio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sevicos\PagamentoServico.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Sevicos\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
