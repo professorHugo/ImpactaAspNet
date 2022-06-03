@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Data.Entity;
 
 namespace GatewayPagamento.Repositorios.SqlServer.CodeFirst
 {
@@ -25,6 +26,8 @@ namespace GatewayPagamento.Repositorios.SqlServer.CodeFirst
             using (var contexto = new GatewayPagamentoDbContext())
             {
                 return contexto.Pagamentos
+                    //.Include("Cartao")
+                    .Include(p => p.Cartao)
                     .Where(p => p.Cartao.Numero == numeroCartao)
                     .ToList();
             }
@@ -36,6 +39,7 @@ namespace GatewayPagamento.Repositorios.SqlServer.CodeFirst
             using (var contexto = new GatewayPagamentoDbContext())
             {
                 return contexto.Pagamentos
+                    .Include(p => p.Cartao)
                     .Where(condicao)
                     .ToList();
             }
