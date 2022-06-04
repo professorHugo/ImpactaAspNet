@@ -43,6 +43,7 @@ namespace Marketplace.Mvc.Controllers
             viewModel.Documento = Convert.ToUInt64( new Regex("[^\\d]").Replace(cliente.Documento,"")).ToString(@"000\.000\.000-00");
             viewModel.Telefone = cliente.Telefone;
             viewModel.Email = cliente.Email;
+            viewModel.GuidCartao = cliente.Cartoes?.FirstOrDefault().Guid;
 
             return viewModel;
         }

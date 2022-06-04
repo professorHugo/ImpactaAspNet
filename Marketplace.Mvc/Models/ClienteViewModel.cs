@@ -18,12 +18,14 @@ namespace Marketplace.Mvc.Models
         public string Nome { get; set; }
 
         [Required]
-        [Phone]
         public string Telefone { get; set; }
 
         [Required]
         [EmailAddress]
         public string Email { get; set; }
+
+        //[Required]
+        public Guid? GuidCartao { get; set; }
 
     }
 }
